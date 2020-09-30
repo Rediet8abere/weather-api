@@ -33,11 +33,13 @@ class App extends Component {
 
   renderWeather() {
     if (this.state.weatherData === null) {
+
       return undefined
     }
+    console.log("this.state.weatherData", this.state.weatherData.cod)
     
     return (
-      <Weather weatherData={this.state.weatherData.weather[0]} main={this.state.weatherData.main}/>  
+      <Weather weatherData={this.state.weatherData.weather[0]} main={this.state.weatherData.main} status={this.state.weatherData.cod}/>  
     )
   }
 
